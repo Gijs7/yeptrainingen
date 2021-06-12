@@ -58,16 +58,6 @@ export default {
         } else {
           throw new Error('\'./\' should be used only in \'.md\' files!')
         }
-      // } else if (
-      //   this.src.startsWith('~/content/') ||
-      //   this.src.startsWith('@/content/')
-      // ) {
-      //   return requireFromContent(this.src.slice(10))
-      // } else if (
-      //   this.src.startsWith('~/assets/') ||
-      //   this.src.startsWith('@/assets/')
-      // ) {
-      //   return requireFromAssets(this.src.slice(9))
       } else {
         return this.src
       }
