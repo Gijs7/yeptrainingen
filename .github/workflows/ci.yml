@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Setup node env 🏗
-        uses: actions/setup-node@v2.1.4
+        uses: actions/setup-node@v2.1.5
         with:
           node-version: ${{ matrix.node }}
 
@@ -42,7 +42,10 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install dependencies 👨🏻‍💻
-        run: yarn --production=false
+        run: yarn
+
+      - name: Run ESLint
+        run: eslint . --ext .js,.jsx,.ts,.tsx
 
       - name: Run linter 👀
         run: yarn lint
